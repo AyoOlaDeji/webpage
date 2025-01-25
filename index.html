@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Search Widget</title>
+</head>
+<body>
+    <div id="search-widget_IO312PWQ">
+        <script>
+            !function(e, t, a, n, c, r) {
+                function logMessage(msg) { e.console.log("[Guesty Embedded Widget]:", msg); }
+                var i, d, l, o, y, m, g, h, p, u;
+
+                if (n) {
+                    i = n;
+                    d = t.getElementsByTagName("head")[0];
+                    l = t.createElement("link");
+                    l.rel = "stylesheet";
+                    l.type = "text/css";
+                    l.href = i;
+                    d.appendChild(l);
+                }
+
+                o = function() {
+                    try {
+                        e[a].create(r).catch(function(err) {
+                            logMessage(err.message);
+                        });
+                    } catch (err) {
+                        logMessage(err.message);
+                    }
+                };
+
+                h = false;
+                y = c;
+                m = function() {
+                    if (!h && (!this.readyState || this.readyState === "complete")) {
+                        h = true;
+                        o();
+                    }
+                };
+
+                g = t.createElement("script");
+                g.type = "text/javascript";
+                g.src = y;
+                g.async = true;
+                g.onload = g.onreadystatechange = m;
+
+                p = g;
+                u = t.getElementsByTagName("script")[0];
+                u.parentNode.insertBefore(p, u);
+            }(
+                window,
+                document,
+                "GuestySearchBarWidget",
+                "https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.css",
+                "https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.js",
+                { "siteUrl": "booking.siestakeyrentalproperties.com" }
+            );
+        </script>
+    </div>
+</body>
+</html>
